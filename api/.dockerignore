@@ -1,0 +1,9 @@
+dist
+node_modules
+prisma/migrations
+.env.example
+.eslintrc.js
+.gitignore
+.prettierrc
+README.md
+vercel.json

@@ -1,0 +1,8 @@
+.next
+node_modules
+.env.example
+.eslintrc.json
+.gitignore
+components.json
+Dockerfile
+README.md
