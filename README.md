@@ -97,14 +97,14 @@ You can use Without Full-Docker!
 
 #### Using Backend docker
 
-You can Run the back inside the docker with the DB or without it. To run withour comment the ```full_stack_back``` service on the ```./api/docker-compose.yml``` file or paste this command.
+You can Run the backend inside the docker with the database or without it. To run without comment the ```full_stack_back``` service on the ```./api/docker-compose.yml``` file or paste this command.
 
 ```bash
 sudo docker compose up full_stack_db | docker-compose up full_stack_db
 
 ```
 
-To run back with the DB just paste this command.
+To run backend with the database just paste this command.
 
 ```bash
 sudo docker compose up -d --build | docker-compose up -d --build 
@@ -127,9 +127,7 @@ cd client && pnpm run dev
 
 ## 🚀 Deployment <a name = "deployment">Nest_Next</a>
 
-You can deploy on vercel BUT to deploy the Back-end you need to add the ./api/dir folder on your github repo. Actually Vercel dont build correctly NestJs, build your app manually and deploy the dist folder.
-
-Add additional notes about how to deploy this on a live system.
+You can deploy on vercel BUT to deploy the Back-end you need to add the ```./api/dir``` folder on your github repo. Actually Vercel dont build correctly NestJs, build your app manually and deploy the dist folder.
 
 ## ⛏️ Built Using <a name = "built_using">Nest_Next</a>
 
