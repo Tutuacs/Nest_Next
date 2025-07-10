@@ -14,10 +14,10 @@ export default function NavLinks() {
       <main>
         <div className="flex p-4 flex-row justify-between items-center">
           <div className="flex space-x-4">
-            <Link className="p-2" href="/home">
+            <Link className="p-2" href="/">
               Home
             </Link>
-            <Link className="p-2" href="/">
+            <Link className="p-2" href="/home">
               Users
             </Link>
             <Link className="p-2" href="/">
@@ -35,10 +35,10 @@ export default function NavLinks() {
       <main>
         <div className="flex p-4 flex-row justify-between items-center">
           <div className="flex space-x-4">
-            <Link className="p-2" href="/home">
+            <Link className="p-2" href="/">
               Home
             </Link>
-            <Link className="p-2" href="/">
+            <Link className="p-2" href="/home">
               {session?.profile?.name}
             </Link>
           </div>

@@ -23,7 +23,7 @@ export class AuthFunctionsService extends PrismaService {
         role: true,
       },
     });
-    if (profile && (await bcrypt.compare(login.password, profile.password))) {
+    if (profile && (await bcrypt.compare(login.password, profile.password!))) {
       return {
         id: profile.id,
         email: profile.email,

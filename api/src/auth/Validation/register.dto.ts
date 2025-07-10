@@ -1,10 +1,14 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsEmail, IsString, IsOptional, IsStrongPassword, IsNumber, Min, Max, IsBase64, IsEmpty, } from 'class-validator';
+import { IsEmail, IsString, IsOptional, IsStrongPassword, IsNumber, Min, Max, IsBase64, IsEmpty, IsEnum, } from 'class-validator';
+import { ROLE } from 'src/decorators';
 
 export class RegisterDto {
+  @ApiProperty()
   @IsEmail()
   email: string;
 
+  @ApiProperty()
   @IsStrongPassword({
     minLength: 3,
     minLowercase: 0,
@@ -19,10 +23,7 @@ export class RegisterDto {
   name: string;
 
   @IsOptional()
-  @Type(() => Number)
-  @IsNumber()
-  @Min(0)
-  @Max(1)
+  @IsEnum(ROLE)
   role: number;
 
   @IsOptional()

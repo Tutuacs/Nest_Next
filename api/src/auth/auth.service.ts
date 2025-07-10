@@ -16,7 +16,7 @@ export class AuthService {
   constructor(
     private readonly authFunctions: AuthFunctionsService,
     private readonly jwt: JwtService,
-  ) {}
+  ) { }
 
   async login(login: LoginDto) {
     const user = await this.authFunctions.findLogin(login);
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   async register(register: RegisterDto) {
-    if (register.name){
+    if (register.name) {
       if (register.name.length === 0) {
         register.name = register.email.split('@')[0];
       }
@@ -37,7 +37,7 @@ export class AuthService {
     id: string;
     email: string;
     role: number;
-    name: string;
+    name: string | null;
   }) {
     return {
       token: await this.jwt.signAsync(
@@ -62,7 +62,7 @@ export class AuthService {
     id: string;
     email: string;
     role: number;
-    name: string;
+    name: string | null;
   }) {
     return {
       token: await this.jwt.signAsync(
@@ -87,7 +87,7 @@ export class AuthService {
     id: string;
     email: string;
     role: number;
-    name: string;
+    name: string | null;
   }) {
     const token = (await this.createToken(profile)).token;
     const refreshToken = (await this.createRefreshToken(profile)).token;

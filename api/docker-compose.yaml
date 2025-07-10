@@ -9,28 +9,28 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - ${POSTGRES_PORT}:5432
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
-      interval: 5s
+    # healthcheck:
+    #   test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+    #   interval: 5s
     networks:
       - back
 
-  full_stack_back:
-    container_name: full_stack_back
-    build:
-      context: .
-      target: server
-    environment:
-      - POSTGRES_HOST=full_stack_db
-      - POSTGRES_PORT=5432
-    command: pnpm run prod
-    ports:
-      - ${PORT}:${PORT}
-    depends_on:
-      full_stack_db:
-          condition: service_healthy
-    networks:
-      - back
+  # full_stack_back:
+  #   container_name: full_stack_back
+  #   build:
+  #     context: .
+  #     target: server
+  #   environment:
+  #     - POSTGRES_HOST=full_stack_db
+  #     - POSTGRES_PORT=5432
+  #   command: pnpm run prod
+  #   ports:
+  #     - ${PORT}:${PORT}
+  #   depends_on:
+  #     full_stack_db:
+  #         condition: service_healthy
+  #   networks:
+  #     - back
 
 networks:
   back:

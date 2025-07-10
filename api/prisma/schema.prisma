@@ -16,7 +16,7 @@ datasource db {
 model Profile {
   id       String  @id @default(uuid())
   name     String?
-  email    String? @unique
-  password String?
+  email    String  @unique
+  password String
   role     Int     @default(0)
 }
